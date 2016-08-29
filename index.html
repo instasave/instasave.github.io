@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form method="post" id="form">
+		<label>Paste link to photo</label>
+		<input name="link" id="link" type="text" placeholder="link">
+		<button type="submit">Download</button>
+	</form>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		$('#form').on("submit", function(e) {
+			$.get($('#link').val(), function( data ) {
+				$('._jjzlb').html( data );
+			}); 
+			return false;
+		});
+	</script>
+</body>
+</html>
